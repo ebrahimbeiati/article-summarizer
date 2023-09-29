@@ -4,15 +4,15 @@ const Hero = () => {
   return (
     <header className="w-full flex-col items-center justify-center">
       <nav className="flex justify-between items-center w-full mb-10 pt-4">
-        {/* Use the imported image as the logo */}
+        {/* Use the imported image as the logo and set its width, height, and border-radius */}
         <img
           src={infoLogo}
           alt="sumz_logo"
-          className="w-12 h-12 object-contain rounded-full "
+          className="w-16 h-16 object-contain rounded-full" // Apply the rounded-full class for a circular shape
         />
         <button
           type="button"
-          onChange={() => window.open("https://github.com/ebrahimbeiati")}
+          onClick={() => window.open("https://github.com/ebrahimbeiati")}
           className="bg-blue-500 hover:bg-black text-white font-bold py-2 px-4 rounded"
         >
           My GitHub
