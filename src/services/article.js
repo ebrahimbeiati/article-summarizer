@@ -1,26 +1,57 @@
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const rapidApi = import.meta.env.VITE_RAPID_API_ARTICLE_KEY;
+// const rapidApiKey = import.meta.env.VITE_RAPID_API_ARTICLE_KEY;
+
+// export const articleApi = createApi({
+//   reducerPath: "articleApi",
+//   baseQuery: fetchBaseQuery({
+//     baseUrl: "https://article-extractor-and-summarizer.p.rapidapi.com/",
+//     prepareHeaders: (headers) => {
+//       headers.set("X-RapidAPI-Key", rapidApiKey);
+//       headers.set(
+//         "X-RapidAPI-Host",
+//         "article-extractor-and-summarizer.p.rapidapi.com"
+//       );
+
+//       return headers;
+//     },
+//   }),
+// endpoints: (builder) => ({
+//   getSummary: builder.query({
+//     query: (params) =>
+//       `summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`,
+//   }),
+// }),
+
+//   }),
+
+
+// export const { useLazyGetSummaryQuery } = articleApi;
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+const rapidApiKey = import.meta.env.VITE_RAPID_API_ARTICLE_KEY;
 
 export const articleApi = createApi({
   reducerPath: "articleApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://article-extractor-and-summarizer.p.rapidapi.com/",
     prepareHeaders: (headers) => {
-    headers.set("X-RapidAPI-Key",rapidApi);
-    headers.set("X-RapidAPI-Host", "article-extractor-and-summarizer.p.rapidapi.com");
-    return headers;
-    }
+      headers.set("X-RapidAPI-Key", rapidApiKey);
+      headers.set(
+        "X-RapidAPI-Host",
+        "article-extractor-and-summarizer.p.rapidapi.com"
+      );
+
+      return headers;
+    },
   }),
-  
+
   endpoints: (builder) => ({
-    getArticle: builder.query({
-      getSummary: builder.query({
-        query: (params) => `/summarize?url=$
-         {encodeURIComponent (params.articleUrl)}&length=4 `
-      })
-    })
-})
-})
-     
-export const { useLazyGetArticleQuery } = articleApi;
+    getSummary: builder.query({
+      query: (params) =>
+        `summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`,
+    }),
+  }),
+});
+
+export const { useLazyGetSummaryQuery } = articleApi;
