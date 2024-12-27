@@ -121,7 +121,7 @@ This project is licensed under the **MIT Licence**. See the [LICENSE](./LICENSE)
 For any questions or feedback, feel free to reach out:
 
 - **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **GitHub**: [github.com/your-username](https://github.com/your-username)
+- **GitHub**: (https://github.com/ebrahimbeiati/article-summarizer)
 
 ---
 
